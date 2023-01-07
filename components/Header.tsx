@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from '@styles/Header.module.scss';
 import Link from 'next/link';
 
@@ -10,19 +11,13 @@ const Header: React.FC = () => {
       <nav className={styles['header-right']}>
         <ul className={styles['header-nav']}>
           <li>
-            <Link href="#work">
-              <a>Work</a>
-            </Link>
+            <Link href="#work">Work</Link>
           </li>
           <li>
-            <Link href="#work">
-              <a>About Me</a>
-            </Link>
+            <Link href="#work">About Me</Link>
           </li>
           <li>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
