@@ -5,6 +5,9 @@
   border: 1px solid vars.$green;
   border-radius: 20px;
   padding: 6px 30px;
+  max-width: max-content;
+  text-align: center;
+  font-size: vars.$font-size-xl;
 }
 
 .button:hover {
