@@ -1,0 +1,50 @@
+@use '@styles/vars';
+
+.header {
+  color: vars.$white;
+  width: 100%;
+  height: 750px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20%;
+}
+
+.header-background {
+  filter: drop-shadow(0 0 0 #000);
+  object-fit: cover;
+  border-radius: 0 0 30px 30px;
+  z-index: -1;
+  object-position: 60% 50%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 24px;
+  h1, h3 {
+    padding-left: 12px;
+  }
+  h1 {
+    border-left: 3px solid vars.$white;
+  }
+  .content-title {
+    padding-bottom: 32px;
+  }
+}
+.redirect {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .line {
+    width: 25%;
+    height: 2px;
+    background-color: vars.$white;
+    margin-right: 15px;
+  }
+  a {
+    font-size: vars.$font-size-lg;
+  }
+}
