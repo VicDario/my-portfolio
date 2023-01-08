@@ -18,23 +18,23 @@ a {
 
 h1 {
   font-size: vars.$font-title-size-primary-mobile;
-  color: vars.$white;
 }
 
 h2 {
   font-size: vars.$font-title-size-secondary-mobile;
-  color: vars.$white;
 }
 
 h3 {
   font-size: vars.$font-title-size-tertiary-mobile;
   font-weight: 400;
+}
+
+p, a, li, h1, h2, h3 {
   color: vars.$white;
 }
 
 p, a, li {
   font-size: vars.$font-size-md;
-  color: vars.$white;
 }
 
 @media (min-width: 768px) {
