@@ -1,12 +1,15 @@
 import '@styles/globals.scss';
 import type { AppProps } from 'next/app';
-import { Fira_Code } from '@next/font/google';
+import { Lato } from '@next/font/google';
 
-const firaCode = Fira_Code({ subsets: ['latin'] });
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={firaCode.className}>
+    <main className={lato.className}>
       <Component {...pageProps} />
     </main>
   );
