@@ -1,8 +1,10 @@
+@use './vars' as vars;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Fira Sans, sans-serif;
+  font-size: 62.5%;
 }
 
 a {
@@ -12,4 +14,37 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: vars.$font-title-size-primary-mobile;
+  color: vars.$white;
+}
+
+h2 {
+  font-size: vars.$font-title-size-secondary-mobile;
+  color: vars.$white;
+}
+
+h3 {
+  font-size: vars.$font-title-size-tertiary-mobile;
+  font-weight: 400;
+  color: vars.$white;
+}
+
+p, a, li {
+  font-size: vars.$font-size-md;
+  color: vars.$white;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: vars.$font-title-size-primary-desktop;
+  }
+  h2 {
+    font-size: vars.$font-title-size-secondary-desktop;
+  }
+  h3 {
+    font-size: vars.$font-title-size-tertiary-desktop;
+  }
 }
