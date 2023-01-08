@@ -1,0 +1,13 @@
+@use '@styles/vars';
+
+.button {
+  background-color: transparent;
+  border: 1px solid vars.$green;
+  border-radius: 20px;
+  padding: 6px 30px;
+}
+
+.button:hover {
+  background-color: vars.$green;
+  color: vars.$white;
+}
