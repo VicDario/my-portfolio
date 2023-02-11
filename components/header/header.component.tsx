@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         alt="Background"
         src={background}
         placeholder="blur"
-        quality={100}
+        quality={80}
         fill
         className={styles['header-background']}
         sizes="100vw"
