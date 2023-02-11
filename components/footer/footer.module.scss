@@ -11,6 +11,12 @@
     * {
         z-index: 1;
     }
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     .nav {
         padding-top: 20px;
         display: flex;
@@ -31,7 +37,22 @@
 }
 
 @media (min-width: 768px) {
-    .background {
-        display: none;
+    .footer {
+        height: 140px;
+        flex-direction: row;
+        justify-content: space-between;
+        .background {
+            display: none;
+        }
+        .title {
+            flex-direction: row;
+            justify-content: space-between;
+            h3 {
+                width: 100px;
+                text-align: center;
+                margin-right: 30px;
+            }
+        }
     }
+
 }

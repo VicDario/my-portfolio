@@ -19,8 +19,10 @@ const Footer: React.FC = () => {
         fill
         className={styles.background}
       />
-      <h3>Let&apos;s build something together</h3>
-      <ContactButton />
+      <div className={styles.title}>
+        <h3>Let&apos;s build something together</h3>
+        <ContactButton />
+      </div>
       <nav className={styles.nav}>
         <Link href="https://github.com/VicDario" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faGithub} size="3x" />
