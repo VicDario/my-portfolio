@@ -1,0 +1,21 @@
+import React from 'react';
+import styles from './about-me.module.scss';
+
+const AboutMe: React.FC = () => {
+  return (
+    <section className={styles['about-me']}>
+      <h2>About Me</h2>
+      <p>I am passionate about organization and proactivity in every job I do.</p>
+      <p>
+        One of my biggest motivations is to improve my skills every day to keep growing as a
+        professional.
+      </p>
+      <p>
+        I love programming because I combine technology with my interest in solving problems. <br />
+      </p>
+      <p>I know that by applying this formula I can create products with great potential.</p>
+    </section>
+  );
+};
+
+export default AboutMe;
