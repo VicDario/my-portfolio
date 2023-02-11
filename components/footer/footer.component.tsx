@@ -6,10 +6,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import ContactButton from '@components/contact-button/contact-button.component';
+import lines from '@public/images/lines.png';
 
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
+      <Image
+        alt="Decorative lines"
+        src={lines}
+        placeholder="blur"
+        quality={80}
+        fill
+        className={styles.background}
+      />
       <h3>Let&apos;s build something together</h3>
       <ContactButton />
       <nav className={styles.nav}>

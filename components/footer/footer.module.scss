@@ -1,17 +1,37 @@
 @use '~styles/vars' as vars;
 .footer {
+    position: relative;
     background-color: vars.$gray;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
+    overflow: hidden;
+    * {
+        z-index: 1;
+    }
     .nav {
         padding-top: 20px;
         display: flex;
         justify-content: space-evenly;
         width: 100%;
         max-width: 300px;
+
+        svg:hover {
+            color: vars.$green;
+        }
+    }
+    .background {
+        z-index: 0;
+        inset: 85px 0 0 -26vh !important;
+        transform: rotate(180deg);
+        width: 300px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .background {
+        display: none;
     }
 }
