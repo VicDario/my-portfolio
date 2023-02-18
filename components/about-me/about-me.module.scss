@@ -1,7 +1,14 @@
 .about-me {
     width: 100%;
     padding: 20px 30px;
+    line-height: 2.2rem;
+    position: relative;
     text-align: center;
+    overflow: hidden;
+    .background {
+        object-fit: contain;
+        object-position: 100%;
+    }
 }
 
 @media (min-width: 768px) {

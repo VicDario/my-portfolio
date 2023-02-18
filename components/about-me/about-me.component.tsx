@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './about-me.module.scss';
+import lines from '@public/images/lines-dark-green.png';
 
 const AboutMe: React.FC = () => {
   return (
@@ -14,6 +16,14 @@ const AboutMe: React.FC = () => {
         I love programming because I combine technology with my interest in solving problems. <br />
       </p>
       <p>I know that by applying this formula I can create products with great potential.</p>
+      <Image
+        alt="Decorative lines"
+        src={lines}
+        placeholder="blur"
+        quality={80}
+        fill
+        className={styles.background}
+      />
     </section>
   );
 };
