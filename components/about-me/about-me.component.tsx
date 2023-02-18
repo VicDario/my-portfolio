@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './about-me.module.scss';
-import lines from '@public/images/lines-dark-green.png';
+import lines from '@public/images/lines.png';
 
 const AboutMe: React.FC = () => {
   return (

@@ -5,9 +5,14 @@
     position: relative;
     text-align: center;
     overflow: hidden;
+    p {
+        position: relative;
+        z-index: 1;
+        text-shadow: 1px 1px 1px black;
+    }
     .background {
         object-fit: contain;
-        object-position: 100%;
+        object-position: 79vw;
     }
 }
 
@@ -19,5 +24,4 @@
             padding-bottom: 24px;
         }
     }
-
 }
