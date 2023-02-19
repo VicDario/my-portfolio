@@ -28,3 +28,16 @@
         }
     }
 }
+
+@media (min-width: 768px) {
+    .skills {
+        align-items: flex-start;
+        padding: 0 50px;
+
+        .skills-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
