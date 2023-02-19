@@ -48,3 +48,11 @@
     font-size: vars.$font-size-lg;
   }
 }
+
+@media (min-width: 768px) {
+  .header {
+    .content {
+      padding-left: 50px;
+    }
+  }
+}
