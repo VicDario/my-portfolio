@@ -6,10 +6,28 @@
   padding: 6px 30px;
   max-width: max-content;
   text-align: center;
-  font-size: vars.$font-size-xl;
+  font-size: vars.$font-size-sm;
 }
 
 .button:hover {
   background-color: vars.$green;
   color: vars.$white;
+}
+
+@media (min-width: 360px) {
+  .button {
+    font-size: vars.$font-size-md;
+  }
+}
+
+@media (min-width: 576px) {
+  .button {
+    font-size: vars.$font-size-lg;
+  }
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: vars.$font-size-xl;
+  }
 }
