@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from './about-me.module.scss';
 import lines from '@public/images/lines.png';
 
+import CurriculumVitaeButton from '@components/cv-button/cv-button.component';
+
 const AboutMe: React.FC = () => {
   return (
     <section className={styles['about-me']}>
@@ -16,6 +18,9 @@ const AboutMe: React.FC = () => {
         I love programming because I combine technology with my interest in solving problems. <br />
       </p>
       <p>I know that by applying this formula I can create products with great potential.</p>
+      <div className={styles['button-container']}>
+        <CurriculumVitaeButton />
+      </div>
       <Image
         alt="Decorative lines"
         src={lines}

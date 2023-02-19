@@ -10,9 +10,13 @@
         z-index: 1;
         text-shadow: 1px 1px 1px black;
     }
+    .button-container {
+        margin-top: 30px;
+    }
     .background {
         object-fit: contain;
         object-position: 79vw;
+        z-index: -1;
     }
 }
 
