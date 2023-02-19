@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '@components/header/header.component';
 import Footer from '@components/footer/footer.component';
 import AboutMe from '@components/about-me/about-me.component';
+import Skills from '@components/skills/skills.components';
 //import styles from '@styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <AboutMe />
+      <Skills />
       <Footer />
     </>
   );

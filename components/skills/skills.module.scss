@@ -1,0 +1,30 @@
+@use '~styles/vars' as vars;
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
+        .skill-icon {
+            font-size: 7rem;
+            color: white;
+        }
+        h3 {
+            font-size: 2rem;
+            color: vars.$green;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            li {
+                padding-bottom: 0.8rem;
+            }
+        }
+    }
+}
