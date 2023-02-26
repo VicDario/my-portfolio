@@ -22,10 +22,13 @@
 
 @media (min-width: 768px) {
     .about-me {
-        padding: 20px 50px;
+        padding: 20px 0 20px 50px;
         text-align: left;
         h2 {
             padding-bottom: 24px;
+        }
+        .background {
+            object-position: 100% 50%;
         }
     }
 }
