@@ -41,6 +41,18 @@ p, a, li {
   font-size: vars.$font-size-md;
 }
 
+@media (min-width: 480px) {
+  h1 {
+    font-size: vars.$font-title-size-primary-tablet;
+  }
+  h2 {
+    font-size: vars.$font-title-size-secondary-tablet;
+  }
+  h3 {
+    font-size: vars.$font-title-size-tertiary-tablet;
+  }
+}
+
 @media (min-width: 768px) {
   h1 {
     font-size: vars.$font-title-size-primary-desktop;
