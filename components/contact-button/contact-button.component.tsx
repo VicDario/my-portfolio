@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './contact-button.module.scss';
 
-const ContactButton: React.FC = () => {
+function ContactButton() {
   return (
     <a
       className={styles.button}
@@ -10,6 +10,6 @@ const ContactButton: React.FC = () => {
       Say Hello
     </a>
   );
-};
+}
 
 export default ContactButton;

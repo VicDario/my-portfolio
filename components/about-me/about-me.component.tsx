@@ -5,7 +5,7 @@ import lines from '@public/images/lines.png';
 
 import CurriculumVitaeButton from '@components/cv-button/cv-button.component';
 
-const AboutMe: React.FC = () => {
+function AboutMe() {
   return (
     <section className={styles['about-me']} id="about-me">
       <h2>About Me</h2>
@@ -31,6 +31,6 @@ const AboutMe: React.FC = () => {
       />
     </section>
   );
-};
+}
 
 export default AboutMe;

@@ -3,7 +3,7 @@ import styles from './navbar.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const NavBar: React.FC = () => {
+function NavBar() {
   const router = useRouter();
   const [active, setActive] = useState('');
   const routes = [
@@ -25,6 +25,6 @@ const NavBar: React.FC = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default NavBar;

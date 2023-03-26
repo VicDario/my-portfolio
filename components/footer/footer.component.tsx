@@ -8,7 +8,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import ContactButton from '@components/contact-button/contact-button.component';
 import lines from '@public/images/lines.png';
 
-const Footer: React.FC = () => {
+function Footer() {
   return (
     <footer className={styles.footer}>
       <Image
@@ -33,6 +33,6 @@ const Footer: React.FC = () => {
       </nav>
     </footer>
   );
-};
+}
 
 export default Footer;

@@ -4,7 +4,7 @@ import { faUserCircle, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { faJs } from '@fortawesome/free-brands-svg-icons';
 import styles from './skills.module.scss';
 
-const Skills: React.FC = () => {
+function Skills() {
   return (
     <section className={styles.skills}>
       <h2 className={styles.title}>Skills</h2>
@@ -42,6 +42,6 @@ const Skills: React.FC = () => {
       </section>
     </section>
   );
-};
+}
 
 export default Skills;

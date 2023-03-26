@@ -8,7 +8,7 @@ import ContactButton from '@components/contact-button/contact-button.component';
 
 import background from '@public/images/header_image.png';
 
-const Header: React.FC = () => {
+function Header() {
   return (
     <header className={styles.header}>
       <Image
@@ -34,6 +34,6 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;
