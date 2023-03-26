@@ -3,6 +3,7 @@ import styles from './header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import NavBar from '@components/navbar/navbar.component';
 import ContactButton from '@components/contact-button/contact-button.component';
 
 import background from '@public/images/header_image.png';
@@ -19,6 +20,7 @@ const Header: React.FC = () => {
         className={styles['header-background']}
         sizes="100vw"
       />
+      <NavBar />
       <div className={styles.content}>
         <div className={styles['content-title']}>
           <h1>Víctor Fernández</h1>
