@@ -7,7 +7,7 @@ import CurriculumVitaeButton from '@components/cv-button/cv-button.component';
 
 const AboutMe: React.FC = () => {
   return (
-    <section className={styles['about-me']}>
+    <section className={styles['about-me']} id="about-me">
       <h2>About Me</h2>
       <p>I am passionate about organization and proactivity in every job I do.</p>
       <p>
