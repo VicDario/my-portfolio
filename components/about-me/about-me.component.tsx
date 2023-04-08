@@ -9,15 +9,23 @@ function AboutMe() {
   return (
     <section className={styles['about-me']} id="about-me">
       <h2>About Me</h2>
-      <p>I am passionate about organization and proactivity in every job I do.</p>
+      <p>
+        I&apos;m a driven and self-motivated software developer who&apos;s always seeking new
+        opportunities to learn and grow.
+      </p>
       <p>
         One of my biggest motivations is to improve my skills every day to keep growing as a
         professional.
       </p>
       <p>
-        I love programming because I combine technology with my interest in solving problems. <br />
+        With a passion for troubleshooting and a deep understanding of programming languages and
+        technologies, I thrive on creating innovative solutions that have the potential to make a
+        real impact.
       </p>
-      <p>I know that by applying this formula I can create products with great potential.</p>
+      <p>
+        Whether I&apos;m working on a complex project or tackling a new challenge, I&apos;m always
+        pushing myself to be better and to achieve great results.
+      </p>
       <div className={styles['button-container']}>
         <CurriculumVitaeButton />
       </div>
