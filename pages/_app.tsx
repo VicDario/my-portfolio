@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 
 const lato = Lato({
+  variable: '--lato-font',
   subsets: ['latin'],
   weight: ['300', '400', '700'],
 });
@@ -13,7 +14,12 @@ const lato = Lato({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Component {...pageProps} className={lato.className} />
+      <style jsx global>{`
+        html {
+          font-family: ${lato.style.fontFamily};
+        }
+      `}</style>
+      <Component {...pageProps} />
     </>
   );
 }
