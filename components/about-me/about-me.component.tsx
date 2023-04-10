@@ -19,8 +19,8 @@ function AboutMe() {
       </p>
       <p>
         With a passion for troubleshooting and a deep understanding of programming languages and
-        technologies, I thrive on creating innovative solutions that have the potential to make a
-        real impact.
+        technologies, I enjoycreating innovative solutions that have the potential to make a real
+        impact.
       </p>
       <p>
         Whether I&apos;m working on a complex project or tackling a new challenge, I&apos;m always
