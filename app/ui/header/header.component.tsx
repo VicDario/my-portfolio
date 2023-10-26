@@ -1,10 +1,11 @@
+'use client';
 import React from 'react';
 import styles from './header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import NavBar from '@components/navbar/navbar.component';
-import ContactButton from '@components/contact-button/contact-button.component';
+import NavBar from 'app/ui/navbar/navbar.component';
+import ContactButton from 'app/ui/contact-button/contact-button.component';
 
 import background from '@public/images/header_image.png';
 

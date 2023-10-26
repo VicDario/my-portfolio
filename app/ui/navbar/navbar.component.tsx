@@ -1,19 +1,20 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './navbar.module.scss';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 function NavBar() {
-  const router = useRouter();
-  const [active, setActive] = useState('');
+  const path = usePathname();
+  const [active, setActive] = useState<string | null>('');
   const routes = [
     { path: '/', name: 'Home' },
     { path: '/#work', name: 'Work' },
     { path: '/#about-me', name: 'About Me' },
   ];
   useEffect(() => {
-    setActive(router.asPath);
-  }, [router, router.asPath]);
+    setActive(path);
+  }, [path]);
   return (
     <nav className={styles.navbar}>
       <ul className={styles['navbar-list']}>

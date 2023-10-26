@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-import ContactButton from '@components/contact-button/contact-button.component';
+import ContactButton from 'app/ui/contact-button/contact-button.component';
 import lines from '@public/images/lines.png';
 
 function Footer() {

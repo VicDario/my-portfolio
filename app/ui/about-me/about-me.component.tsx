@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './about-me.module.scss';
 import lines from '@public/images/lines.png';
 
-import CurriculumVitaeButton from '@components/cv-button/cv-button.component';
+import CurriculumVitaeButton from 'app/ui/cv-button/cv-button.component';
 
 function AboutMe() {
   return (
