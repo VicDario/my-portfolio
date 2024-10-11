@@ -5,6 +5,17 @@ import { faJs } from '@fortawesome/free-brands-svg-icons';
 import styles from './skills.module.scss';
 
 function Skills() {
+  const personal: string[] = ['Organization', 'Proactivity', 'Responsibility', 'Teamwork'];
+  const languages: string[] = ['C#', 'JavaScript', 'TypeScript'];
+  const technologies: string[] = [
+    'ASP.NET',
+    'NestJS',
+    'Express',
+    'GraphQL',
+    'React',
+    'Next.js',
+    'Angular',
+  ];
   return (
     <section className={styles.skills}>
       <h2 className={styles.title}>Skills</h2>
@@ -13,30 +24,27 @@ function Skills() {
           <FontAwesomeIcon icon={faUserCircle} className={styles['skill-icon']} />
           <h3>Personal</h3>
           <ul>
-            <li>Organization</li>
-            <li>Proactivity</li>
-            <li>Responsability</li>
-            <li>Teamwork</li>
+            {personal.map((skill) => (
+              <li  key={skill}>{skill}</li>
+            ))}
           </ul>
         </article>
         <article className={styles['skill-item']}>
           <FontAwesomeIcon icon={faJs} className={styles['skill-icon']} />
           <h3>Languages</h3>
           <ul>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
+            {languages.map((language) => (
+              <li key={language}>{language}</li>
+            ))}
           </ul>
         </article>
         <article className={styles['skill-item']}>
           <FontAwesomeIcon icon={faLaptopCode} className={styles['skill-icon']} />
           <h3>Technologies</h3>
           <ul>
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>GraphQL</li>
-            <li>React</li>
-            <li>Next.js</li>
-            <li>Angular</li>
+            {technologies.map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
           </ul>
         </article>
       </section>
