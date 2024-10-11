@@ -3,7 +3,7 @@ import styles from './cv-button.module.scss';
 
 function CurriculumVitaeButton() {
   return (
-    <a className={styles.button} href="/files/resume.pdf" download="victor-curriculum">
+    <a className={styles.button} href="/files/resume-victor-fernandez.pdf" download="victor-curriculum">
       DOWNLOAD MY RESUME
     </a>
   );
