@@ -25,7 +25,7 @@ function Skills() {
           <h3>Personal</h3>
           <ul>
             {personal.map((skill) => (
-              <li  key={skill}>{skill}</li>
+              <li key={skill}>{skill}</li>
             ))}
           </ul>
         </article>
