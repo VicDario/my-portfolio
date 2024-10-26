@@ -6,7 +6,7 @@ import '@styles/globals.scss';
 
 export const metadata = {
   title: 'Víctor Fernández - Developer',
-  description: 'Hello, this is my portfolio',
+  description: 'Hello, this is my portfolio'
 };
 
 const lato = Lato({
