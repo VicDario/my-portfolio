@@ -27,7 +27,7 @@ function Footer() {
         <Link href="https://github.com/VicDario" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faGithub} size="3x" />
         </Link>
-        <Link href="https://www.linkedin.com/in/victordfernandez/" target="_blank" rel="noreferrer">
+        <Link href="https://www.linkedin.com/in/vicdariof/" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faLinkedin} size="3x" />
         </Link>
       </nav>
