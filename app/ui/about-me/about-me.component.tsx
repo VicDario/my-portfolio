@@ -19,7 +19,7 @@ function AboutMe() {
       </p>
       <p>
         With a passion for troubleshooting and a deep understanding of programming languages and
-        technologies, I enjoycreating innovative solutions that have the potential to make a real
+        technologies, I enjoy creating innovative solutions that have the potential to make a real
         impact.
       </p>
       <p>
