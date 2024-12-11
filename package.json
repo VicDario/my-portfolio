@@ -15,30 +15,26 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-regular-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "next": "15.0.1",
-    "react": "19.0.0-rc-69d4b800-20241021",
-    "react-dom": "19.0.0-rc-69d4b800-20241021",
-    "sass": "1.80.4"
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
+    "@fortawesome/free-regular-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "sass": "1.82.0"
   },
   "devDependencies": {
-    "@types/node": "22.7.5",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "eslint": "8.57.1",
-    "eslint-config-next": "15.0.1",
+    "@types/node": "22.10.1",
+    "@types/react": "19.0.1",
+    "eslint": "9.16.0",
+    "eslint-config-next": "15.1.0",
+    "@eslint/eslintrc": "^3",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3",
-    "typescript": "5.3.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1"
-    }
+    "prettier": "^3.4.2",
+    "typescript": "5.7.2"
   }
 }
