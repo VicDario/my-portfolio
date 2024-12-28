@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components";
+
+const personal: string[] = [
+  "Organization",
+  "Proactivity",
+  "Responsibility",
+  "Teamwork",
+];
+const languages: string[] = ["C#", "JavaScript", "TypeScript"];
+const technologies: string[] = [
+  "ASP.NET",
+  "NestJS",
+  "Express",
+  "GraphQL",
+  "React",
+  "Next.js",
+  "Angular",
+];
+---
+
+<section class="skills">
+  <h2 class="title">Skills</h2>
+  <section class="skills-container">
+    <article class="skill-item">
+      <Icon name="fa6-solid:circle-user" class="skill-icon" />
+      <h3>Personal</h3>
+      <ul>
+        {personal.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </article>
+    <article class="skill-item">
+      <Icon name="fa6-brands:js" class="skill-icon" />
+      <h3>Languages</h3>
+      <ul>
+        {languages.map((language) => <li>{language}</li>)}
+      </ul>
+    </article>
+    <article class="skill-item">
+      <Icon name="fa6-solid:laptop-code" class="skill-icon" />
+      <h3>Technologies</h3>
+      <ul>
+        {technologies.map((technology) => <li>{technology}</li>)}
+      </ul>
+    </article>
+  </section>
+</section>
+
+<style lang="scss">
+  @use "../_vars";
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 30px;
+      .skill-icon {
+        font-size: 7rem;
+        color: white;
+      }
+      h3 {
+        font-size: 2rem;
+        color: vars.$green;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        li {
+          padding-bottom: 0.8rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .skills {
+      align-items: flex-start;
+      padding: 0 50px;
+
+      .skills-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+</style>
