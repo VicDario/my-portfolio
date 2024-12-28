@@ -1,0 +1,24 @@
+<a
+  class="button"
+  href="mailto:%64%61%72%69%6F%63%6F%6E%74%72%65%72%61%73%66%63%40%67%6D%61%69%6C%2E%63%6F%6D"
+>
+  Say Hello
+</a>
+
+<style lang="scss">
+  @use "../_vars";
+
+  .button {
+    background-color: transparent;
+    border: 1px solid vars.$green;
+    border-radius: 20px;
+    padding: 6px 30px;
+    max-width: max-content;
+    text-align: center;
+    font-size: vars.$font-size-xl;
+    &:hover {
+      background-color: vars.$green;
+      color: vars.$white;
+    }
+  }
+</style>
