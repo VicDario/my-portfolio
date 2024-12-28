@@ -1,0 +1,92 @@
+---
+import background from "../assets/header_image.png";
+import NavBar from "./NavBar.astro";
+import ContactButton from "./ContactButton.astro";
+import { Image } from 'astro:assets';
+---
+
+<header class="header">
+  <Image
+    alt="Background"
+    src={background}
+    class="header-background"
+  />
+  <NavBar />
+  <div class="content">
+    <div class="content-title">
+      <h1>Víctor Fernández</h1>
+      <h3>Full Stack Developer</h3>
+    </div>
+    <ContactButton />
+  </div>
+  <div class="redirect">
+    <div class="line"></div>
+    <a href="#">View Projects</a>
+  </div>
+</header>
+
+<style lang="scss">
+  @use "../_vars" as vars;
+
+  .header {
+    color: vars.$white;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 30%;
+  }
+
+  .header-background {
+    position: absolute;
+    filter: drop-shadow(0 0 0 #000);
+    object-fit: cover;
+    border-radius: 0 0 30px 30px;
+    z-index: -1;
+    object-position: 60% 50%;
+    width: 100vw;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 24px;
+    padding-bottom: 150px;
+    h1,
+    h3 {
+      padding-left: 12px;
+    }
+    h1 {
+      border-left: 3px solid vars.$white;
+    }
+    .content-title {
+      padding-bottom: 32px;
+    }
+  }
+  .redirect {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .line {
+      width: 25%;
+      height: 2px;
+      background-color: vars.$white;
+      margin-right: 15px;
+    }
+    a {
+      font-size: vars.$font-size-lg;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header {
+      padding-top: 0;
+      .content {
+        padding-left: 50px;
+      }
+    }
+  }
+</style>
