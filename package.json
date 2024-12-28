@@ -9,6 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.1"
+    "@astrojs/vercel": "^8.0.1",
+    "@iconify-json/fa6-brands": "^1.2.5",
+    "@iconify-json/fa6-solid": "^1.2.3",
+    "astro": "^5.1.1",
+    "astro-icon": "^1.1.5",
+    "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.290",
+    "@iconify/utils": "^2.2.1"
   }
 }
