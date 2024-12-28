@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
+
+import lines from "../assets/lines.png";
+import ContactButton from "./ContactButton.astro";
+---
+
+<footer class="footer">
+  <Image alt="Decorative lines" src={lines} class="background" />
+  <div class="title">
+    <h3>Let&apos;s build something together</h3>
+    <ContactButton />
+  </div>
+  <nav class="nav">
+    <a href="https://github.com/VicDario" target="_blank" rel="noreferrer">
+    <Icon name="fa6-brands:github" size="50px" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/vicdariof/"
+      target="_blank"
+      rel="noreferrer"
+    >
+    <Icon name="fa6-brands:linkedin" size="50px" />
+    </a>
+  </nav>
+</footer>
+
+<style lang="scss">
+  @use "../_vars";
+  .footer {
+    position: relative;
+    background-color: vars.$gray;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    * {
+      z-index: 1;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      max-width: 300px;
+
+      svg:hover {
+        color: vars.$green;
+      }
+    }
+    .background {
+      z-index: 0;
+      inset: 85px 0 0 -26vh !important;
+      transform: rotate(180deg);
+      width: 300px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      padding-left: 50px;
+      height: 140px;
+      flex-direction: row;
+      justify-content: space-between;
+      .background {
+        display: none;
+      }
+      .title {
+        flex-direction: row;
+        justify-content: space-between;
+        h3 {
+          width: 100px;
+          text-align: center;
+          margin-right: 30px;
+        }
+      }
+      .nav {
+        padding-top: 0;
+      }
+    }
+  }
+</style>
