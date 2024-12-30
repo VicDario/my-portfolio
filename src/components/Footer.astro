@@ -7,7 +7,7 @@ import ContactButton from "./ContactButton.astro";
 ---
 
 <footer class="footer">
-  <Image alt="Decorative lines" src={lines} class="background" />
+  <Image alt="Decorative lines" src={lines} class="background" priority={false} />
   <div class="title">
     <h3>Let&apos;s build something together</h3>
     <ContactButton />
@@ -58,8 +58,9 @@ import ContactButton from "./ContactButton.astro";
       }
     }
     .background {
+      position: absolute;
       z-index: 0;
-      inset: 85px 0 0 -26vh !important;
+      inset: 50px 0 0 -26vh !important;
       transform: rotate(180deg);
       width: 300px !important;
     }
