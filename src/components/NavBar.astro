@@ -4,19 +4,13 @@ const routes = [
   { path: "/#work", name: "Work" },
   { path: "/#about-me", name: "About Me" },
 ];
-
-// Get the current path dynamically on the client side
-let currentPath = "";
-if (typeof window !== "undefined") {
-  currentPath = window.location.pathname + window.location.hash;
-}
 ---
 
 <nav class="navbar">
   <ul class="navbar-list">
     {
       routes.map((route) => (
-        <li class={currentPath === route.path ? "active" : ""}>
+        <li>
           <a href={route.path}>{route.name}</a>
         </li>
       ))
@@ -43,7 +37,7 @@ if (typeof window !== "undefined") {
         height: 50px;
         color: transparent;
         background-color: rgba(vars.$green, 60%);
-        &.active {
+        &:hover {
           background-color: vars.$green;
         }
         a {
@@ -73,7 +67,7 @@ if (typeof window !== "undefined") {
             color: #ffffff8c;
             width: max-content;
           }
-          &.active {
+          &:hover {
             background-color: transparent;
             a {
               position: relative;
