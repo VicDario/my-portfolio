@@ -1,8 +1,17 @@
+---
+import { translations, defaultLang, type Lang } from "../i18n/translations";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+---
+
 <a
   class="button"
   href="mailto:%64%61%72%69%6F%63%6F%6E%74%72%65%72%61%73%66%63%40%67%6D%61%69%6C%2E%63%6F%6D"
 >
-  Hablemos
+  {translations[lang].hero.contact}
 </a>
 
 <style lang="scss">

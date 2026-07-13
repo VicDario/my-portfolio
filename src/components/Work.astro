@@ -1,58 +1,19 @@
 ---
-interface Project {
-  title: string;
-  company: string;
-  period: string;
-  image: string;
-  description: string[];
-  tags: string[];
-}
+import { translations, type Lang } from "../i18n/translations";
 
-const projects: Project[] = [
-  {
-    title: "Efleet",
-    company: "VistaTI",
-    period: "2025 - Actualidad",
-    image: "/work/efleet.png",
-    description: [
-      "Diseñé desde cero la arquitectura de Efleet 2 (Angular 21 + .NET 10) para resolver la deuda técnica del sistema anterior.",
-      "Modernicé la plataforma de gestión de flota, migrando el frontend de Angular 9 a 20 y un backend en Visual Basic a .NET 8.",
-      "Diseñé el flujo de autenticación y autorización, y creé paquetes compartidos para estandarizar los proyectos a nivel empresa.",
-    ],
-    tags: ["Angular", ".NET", "TypeScript", "C#"],
-  },
-  {
-    title: "Marketplace",
-    company: "Apprecio · Dcanje",
-    period: "2021 - 2024",
-    image: "/work/marketplace.png",
-    description: [
-      "Desarrollé un marketplace habilitado para 4 países, participando en la definición de funcionalidades.",
-      "Construí el backend con Node.js bajo arquitectura de microservicios y el portal de gestión para vendedores con Angular.",
-      "Integré el operador externo Multivende y mejoré los tiempos de respuesta de las APIs hasta un 15%.",
-    ],
-    tags: ["Node.js", "Angular", "Microservicios", "TypeScript"],
-  },
-  {
-    title: "Plataforma RRHH",
-    company: "Base Dos",
-    period: "2024",
-    image: "/work/base-dos.svg",
-    description: [
-      "Participé en el desarrollo de una plataforma de recursos humanos basada en microservicios con .NET y arquitectura limpia.",
-      "Implementé pruebas unitarias, de mutación y funcionales dentro de un modelo de QA compartido para asegurar la calidad del código.",
-      "Trabajé con Entity Framework para el acceso y modelado de datos.",
-    ],
-    tags: [".NET", "C#", "Entity Framework", "Testing"],
-  },
-];
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = translations[lang].work;
+const projects = t.projects;
 ---
 
 <section class="work" id="work">
-  <h2 class="work__title">Mi trabajo</h2>
+  <h2 class="work__title">{t.title}</h2>
 
   <div class="work__carousel">
-    <button class="work__arrow work__arrow--prev" type="button" aria-label="Proyecto anterior">
+    <button class="work__arrow work__arrow--prev" type="button" aria-label={t.prev}>
       <svg viewBox="0 0 24 44" fill="none" aria-hidden="true">
         <path d="M21 3 4 22l17 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -69,7 +30,7 @@ const projects: Project[] = [
             <img
               class="work__card-image"
               src={project.image}
-              alt={`Vista previa de ${project.title}`}
+              alt={project.title}
               width="640"
               height="370"
               loading="lazy"
@@ -85,14 +46,14 @@ const projects: Project[] = [
       ))}
     </ul>
 
-    <button class="work__arrow work__arrow--next" type="button" aria-label="Proyecto siguiente">
+    <button class="work__arrow work__arrow--next" type="button" aria-label={t.next}>
       <svg viewBox="0 0 24 44" fill="none" aria-hidden="true">
         <path d="M3 3 20 22 3 41" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
   </div>
 
-  <div class="work__dots" role="tablist" aria-label="Seleccionar proyecto">
+  <div class="work__dots" role="tablist" aria-label={t.select}>
     {projects.map((project, i) => (
       <button
         class="work__dot"

@@ -4,13 +4,19 @@ import { Icon } from 'astro-icon/components';
 
 import lines from "../assets/lines.png";
 import ContactButton from "./ContactButton.astro";
+import { translations, type Lang } from "../i18n/translations";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
 ---
 
 <footer class="footer">
   <Image alt="Decorative lines" src={lines} class="background" priority={false} />
   <div class="title">
-    <h3>Construyamos algo juntos</h3>
-    <ContactButton />
+    <h3>{translations[lang].footer.cta}</h3>
+    <ContactButton lang={lang} />
   </div>
   <nav class="nav">
     <a href="https://github.com/VicDario" target="_blank" rel="noreferrer">

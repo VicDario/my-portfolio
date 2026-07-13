@@ -1,0 +1,59 @@
+---
+import { locales, langLabels, langHome, translations, type Lang } from "../i18n/translations";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<nav class="lang" aria-label="Language">
+  {
+    locales.map((locale) => (
+      <a
+        class:list={["lang__link", { "is-active": locale === lang }]}
+        href={langHome[locale]}
+        hreflang={locale}
+        aria-current={locale === lang ? "true" : "false"}
+        aria-label={locale === lang ? undefined : translations[lang].meta.switchTo}
+      >
+        {langLabels[locale]}
+      </a>
+    ))
+  }
+</nav>
+
+<style lang="scss">
+  @use "../vars" as vars;
+
+  .lang {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: vars.$font-size-sm;
+
+    &__link {
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: rgba(vars.$white, 0.6);
+      line-height: 1;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover {
+        color: vars.$white;
+      }
+
+      &.is-active {
+        color: vars.$dark;
+        background-color: vars.$green;
+        font-weight: 700;
+      }
+    }
+  }
+
+  @media (min-width: 480px) {
+    .lang {
+      font-size: vars.$font-size-md;
+    }
+  }
+</style>

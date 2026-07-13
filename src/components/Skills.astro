@@ -1,45 +1,36 @@
 ---
 import { Icon } from "astro-icon/components";
+import { translations, type Lang } from "../i18n/translations";
 
-const personal: string[] = [
-  "Organización",
-  "Proactividad",
-  "Responsabilidad",
-  "Trabajo en equipo",
-];
-const languages: string[] = ["C#", "JavaScript", "TypeScript"];
-const technologies: string[] = [
-  ".NET",
-  "Node.js",
-  "Angular",
-  "NestJS",
-  "React",
-  "Entity Framework",
-];
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = translations[lang].skills;
 ---
 
 <section class="skills">
-  <h2 class="title">Habilidades</h2>
+  <h2 class="title">{t.title}</h2>
   <section class="skills-container">
     <article class="skill-item">
       <Icon name="fa6-solid:circle-user" class="skill-icon" />
-      <h3>Personales</h3>
+      <h3>{t.personalTitle}</h3>
       <ul>
-        {personal.map((skill) => <li>{skill}</li>)}
+        {t.personal.map((skill) => <li>{skill}</li>)}
       </ul>
     </article>
     <article class="skill-item">
       <Icon name="fa6-brands:js" class="skill-icon" />
-      <h3>Lenguajes</h3>
+      <h3>{t.languagesTitle}</h3>
       <ul>
-        {languages.map((language) => <li>{language}</li>)}
+        {t.languages.map((language) => <li>{language}</li>)}
       </ul>
     </article>
     <article class="skill-item">
       <Icon name="fa6-solid:laptop-code" class="skill-icon" />
-      <h3>Tecnologías</h3>
+      <h3>{t.technologiesTitle}</h3>
       <ul>
-        {technologies.map((technology) => <li>{technology}</li>)}
+        {t.technologies.map((technology) => <li>{technology}</li>)}
       </ul>
     </article>
   </section>

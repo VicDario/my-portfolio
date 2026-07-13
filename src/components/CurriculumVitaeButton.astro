@@ -1,5 +1,14 @@
+---
+import { translations, defaultLang, type Lang } from "../i18n/translations";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = defaultLang } = Astro.props;
+---
+
 <a class="button" href="/resume-victor-fernandez.pdf" download="resume-victor-fernandez">
-  Descargar CV
+  {translations[lang].about.download}
 </a>
 
 <style lang="scss">
