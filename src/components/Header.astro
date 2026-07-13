@@ -19,10 +19,15 @@ import { Image } from 'astro:assets';
     </div>
     <ContactButton />
   </div>
-  <div class="redirect">
-    <div class="line"></div>
-    <a href="#">View Projects</a>
-  </div>
+  <a class="redirect" href="#work">
+    <span class="line"></span>
+    <span class="redirect-text">Ver proyectos</span>
+    <span class="redirect-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </a>
 </header>
 
 <style lang="scss">
@@ -70,14 +75,40 @@ import { Image } from 'astro:assets';
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: max-content;
     .line {
-      width: 25%;
+      width: 60px;
       height: 2px;
       background-color: vars.$white;
       margin-right: 15px;
+      transition: width 0.25s ease;
     }
-    a {
+    .redirect-text {
       font-size: vars.$font-size-lg;
+    }
+    .redirect-arrow {
+      display: grid;
+      place-items: center;
+      width: 33px;
+      height: 33px;
+      margin-left: 14px;
+      border-radius: 50%;
+      border: 2px solid vars.$green;
+      color: vars.$green;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &:hover {
+      .line {
+        width: 90px;
+      }
+      .redirect-arrow {
+        background-color: vars.$green;
+        color: vars.$dark;
+      }
     }
   }
 
