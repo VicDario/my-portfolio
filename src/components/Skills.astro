@@ -2,43 +2,42 @@
 import { Icon } from "astro-icon/components";
 
 const personal: string[] = [
-  "Organization",
-  "Proactivity",
-  "Responsibility",
-  "Teamwork",
+  "Organización",
+  "Proactividad",
+  "Responsabilidad",
+  "Trabajo en equipo",
 ];
 const languages: string[] = ["C#", "JavaScript", "TypeScript"];
 const technologies: string[] = [
-  "ASP.NET",
-  "NestJS",
-  "Express",
-  "GraphQL",
-  "React",
-  "Next.js",
+  ".NET",
+  "Node.js",
   "Angular",
+  "NestJS",
+  "React",
+  "Entity Framework",
 ];
 ---
 
 <section class="skills">
-  <h2 class="title">Skills</h2>
+  <h2 class="title">Habilidades</h2>
   <section class="skills-container">
     <article class="skill-item">
       <Icon name="fa6-solid:circle-user" class="skill-icon" />
-      <h3>Personal</h3>
+      <h3>Personales</h3>
       <ul>
         {personal.map((skill) => <li>{skill}</li>)}
       </ul>
     </article>
     <article class="skill-item">
       <Icon name="fa6-brands:js" class="skill-icon" />
-      <h3>Languages</h3>
+      <h3>Lenguajes</h3>
       <ul>
         {languages.map((language) => <li>{language}</li>)}
       </ul>
     </article>
     <article class="skill-item">
       <Icon name="fa6-solid:laptop-code" class="skill-icon" />
-      <h3>Technologies</h3>
+      <h3>Tecnologías</h3>
       <ul>
         {technologies.map((technology) => <li>{technology}</li>)}
       </ul>
