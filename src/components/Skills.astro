@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 import { translations, type Lang } from "../i18n/translations";
 
 interface Props {
@@ -7,77 +6,106 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = translations[lang].skills;
+
+const groups = [
+  { title: t.languagesTitle, items: t.languages },
+  { title: t.technologiesTitle, items: t.technologies },
+  { title: t.personalTitle, items: t.personal },
+];
 ---
 
-<section class="skills">
-  <h2 class="title">{t.title}</h2>
-  <section class="skills-container">
-    <article class="skill-item">
-      <Icon name="fa6-solid:circle-user" class="skill-icon" />
-      <h3>{t.personalTitle}</h3>
-      <ul>
-        {t.personal.map((skill) => <li>{skill}</li>)}
-      </ul>
-    </article>
-    <article class="skill-item">
-      <Icon name="fa6-brands:js" class="skill-icon" />
-      <h3>{t.languagesTitle}</h3>
-      <ul>
-        {t.languages.map((language) => <li>{language}</li>)}
-      </ul>
-    </article>
-    <article class="skill-item">
-      <Icon name="fa6-solid:laptop-code" class="skill-icon" />
-      <h3>{t.technologiesTitle}</h3>
-      <ul>
-        {t.technologies.map((technology) => <li>{technology}</li>)}
-      </ul>
-    </article>
-  </section>
+<section class="abilities" id="about-me">
+  <div class="abilities__wrap">
+    <span class="eyebrow">{t.eyebrow}</span>
+    <div class="abilities__grid">
+      {
+        groups.map((group) => (
+          <article class="abil">
+            <h3>{group.title}</h3>
+            <ul role="list">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style lang="scss">
-  @use "../vars";
+  @use "../vars" as vars;
 
-  .skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .skill-item {
+  .abilities {
+    padding: clamp(5rem, 8vh, 9rem) 0;
+    border-top: 1px solid vars.$line;
+  }
+
+  .abilities__wrap {
+    width: min(92%, 108rem);
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    font-family: vars.$mono;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: vars.$green;
+  }
+
+  .abilities__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    margin-top: 3.6rem;
+  }
+
+  .abil {
+    background-color: vars.$surface;
+    border: 1px solid vars.$line;
+    border-radius: 12px;
+    padding: 2.4rem;
+
+    h3 {
+      font-family: vars.$mono;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: vars.$ink-faint;
+      margin: 0 0 1.6rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    li {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding-bottom: 30px;
-      .skill-icon {
-        font-size: 7rem;
-        color: white;
-      }
-      h3 {
-        font-size: 2rem;
-        color: vars.$green;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        li {
-          padding-bottom: 0.8rem;
-        }
+      gap: 1rem;
+      font-size: 1.6rem;
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: vars.$green;
+        flex: none;
       }
     }
   }
 
-  @media (min-width: 768px) {
-    .skills {
-      align-items: flex-start;
-      padding: 0 50px;
-
-      .skills-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-      }
+  @media (min-width: 720px) {
+    .abilities__grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
