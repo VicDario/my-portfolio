@@ -40,8 +40,30 @@ const t = translations[lang];
     font-size: 62.5%;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
-    background-color: vars.$background-gray;
+    background-color: vars.$bg;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: vars.$green;
+    color: vars.$dark;
+  }
+
+  :focus-visible {
+    outline: 2px solid vars.$green;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   a {
