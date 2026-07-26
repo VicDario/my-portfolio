@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "./Header.astro";
-import Work from "./Work.astro";
-import AboutMe from "./AboutMe.astro";
+import TopBar from "./TopBar.astro";
+import Hero from "./Hero.astro";
+import Journey from "./Journey.astro";
 import Skills from "./Skills.astro";
 import Footer from "./Footer.astro";
 import type { Lang } from "../i18n/translations";
@@ -14,9 +14,9 @@ const { lang } = Astro.props;
 ---
 
 <Layout lang={lang}>
-  <Header lang={lang} />
-  <Work lang={lang} />
-  <AboutMe lang={lang} />
+  <TopBar lang={lang} />
+  <Hero lang={lang} />
+  <Journey lang={lang} />
   <Skills lang={lang} />
   <Footer lang={lang} />
 </Layout>
