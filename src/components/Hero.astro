@@ -1,0 +1,107 @@
+---
+import { translations, type Lang } from "../i18n/translations";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = translations[lang].hero;
+---
+
+<section class="hero" id="top">
+  <p class="hero__role">{t.role}</p>
+  <h1 class="hero__title">
+    {t.title.pre}<span class="em">{t.title.em}</span>{t.title.post}
+  </h1>
+  <p class="hero__lede">{t.lede}</p>
+  <div class="hero__stats">
+    {
+      t.stats.map((stat) => (
+        <div class="stat">
+          <div class="stat__num">{stat.value}</div>
+          <div class="stat__label">{stat.label}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../vars" as vars;
+
+  .hero {
+    width: min(92%, 108rem);
+    margin-inline: auto;
+    padding: clamp(6rem, 12vh, 13rem) 0 clamp(5rem, 9vh, 9rem);
+  }
+
+  .hero__role {
+    font-family: vars.$mono;
+    font-size: 1.3rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: vars.$ink-soft;
+    margin: 0 0 2.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    &::before {
+      content: "";
+      width: 3rem;
+      height: 1px;
+      background-color: vars.$green;
+      display: inline-block;
+    }
+  }
+
+  .hero__title {
+    font-weight: 800;
+    font-size: clamp(3.2rem, 7vw, 5.6rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin: 0;
+    max-width: 16ch;
+    text-wrap: balance;
+    color: vars.$white;
+
+    .em {
+      color: vars.$green;
+    }
+  }
+
+  .hero__lede {
+    margin: 2.8rem 0 0;
+    max-width: 56ch;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: vars.$ink-soft;
+  }
+
+  .hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.4rem;
+    margin-top: 4.4rem;
+    padding-top: 3rem;
+    border-top: 1px solid vars.$line;
+  }
+
+  .stat__num {
+    font-family: vars.$mono;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1;
+    color: vars.$green;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat__label {
+    font-family: vars.$mono;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: vars.$ink-faint;
+    margin-top: 0.8rem;
+  }
+</style>
