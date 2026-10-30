@@ -35,6 +35,7 @@ export interface Translation {
     viewProjects: string;
     title: { pre: string; em: string; post: string };
     lede: string;
+    photoAlt: string;
     stats: Stat[];
   };
   work: {
@@ -75,6 +76,7 @@ export const translations: Record<Lang, Translation> = {
         em: "problemas reales",
         post: " — de la arquitectura al detalle.",
       },
+      photoAlt: "Retrato de Víctor Fernández",
       lede: "Más de cuatro años llevando plataformas desde la deuda técnica hacia sistemas modernos, con TypeScript, Angular, Node.js y .NET bajo arquitecturas limpias y de microservicios.",
       stats: [
         { value: "4+", label: "Años de experiencia" },
@@ -168,6 +170,7 @@ export const translations: Record<Lang, Translation> = {
         em: "real problems",
         post: " — from the architecture to the detail.",
       },
+      photoAlt: "Portrait of Víctor Fernández",
       lede: "Over four years taking platforms from technical debt to modern systems, with TypeScript, Angular, Node.js and .NET under clean and microservices architectures.",
       stats: [
         { value: "4+", label: "Years of experience" },

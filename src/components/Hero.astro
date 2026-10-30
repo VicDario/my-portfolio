@@ -9,21 +9,26 @@ const t = translations[lang].hero;
 ---
 
 <section class="hero" id="top">
-  <p class="hero__role">{t.role}</p>
-  <h1 class="hero__title">
-    {t.title.pre}<span class="em">{t.title.em}</span>{t.title.post}
-  </h1>
-  <p class="hero__lede">{t.lede}</p>
-  <div class="hero__stats">
-    {
-      t.stats.map((stat) => (
-        <div class="stat">
-          <div class="stat__num">{stat.value}</div>
-          <div class="stat__label">{stat.label}</div>
-        </div>
-      ))
-    }
+  <div class="hero__copy">
+    <p class="hero__role">{t.role}</p>
+    <h1 class="hero__title">
+      {t.title.pre}<span class="em">{t.title.em}</span>{t.title.post}
+    </h1>
+    <p class="hero__lede">{t.lede}</p>
+    <div class="hero__stats">
+      {
+        t.stats.map((stat) => (
+          <div class="stat">
+            <div class="stat__num">{stat.value}</div>
+            <div class="stat__label">{stat.label}</div>
+          </div>
+        ))
+      }
+    </div>
   </div>
+  <figure class="hero__photo">
+    <img src="/profile.webp" alt={t.photoAlt} width="900" height="857" fetchpriority="high" />
+  </figure>
 </section>
 
 <style lang="scss">
@@ -33,6 +38,44 @@ const t = translations[lang].hero;
     width: min(92%, 108rem);
     margin-inline: auto;
     padding: clamp(6rem, 12vh, 13rem) 0 clamp(5rem, 9vh, 9rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(3rem, 5vw, 6rem);
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hero__photo {
+    position: relative;
+    margin: 0;
+    align-self: end;
+
+    // Soft green glow so the cutout sits in the scene instead of floating.
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 12% 8% 0;
+      background: radial-gradient(closest-side, rgba(vars.$green, 0.22), transparent);
+      filter: blur(30px);
+      z-index: -1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      // Fade the shirt out at the bottom so the crop has no hard edge.
+      mask-image: linear-gradient(to bottom, #000 70%, transparent);
+    }
+
+    @media (max-width: 860px) {
+      order: -1;
+      width: min(24rem, 60%);
+      margin-bottom: 3rem;
+    }
   }
 
   .hero__role {
