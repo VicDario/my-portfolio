@@ -43,7 +43,28 @@ const t = translations[lang].hero;
     align-items: center;
     gap: clamp(3rem, 5vw, 6rem);
 
-    @media (max-width: 860px) {
+    // Tablet: photo sits beside the role + title, lede and stats run full width.
+    @media (max-width: 1024px) {
+      grid-template-columns: minmax(0, 1fr) minmax(14rem, 32%);
+      align-items: end;
+      gap: 0 3rem;
+
+      .hero__copy {
+        display: contents;
+      }
+
+      .hero__role,
+      .hero__title {
+        grid-column: 1;
+      }
+
+      .hero__lede,
+      .hero__stats {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 640px) {
       grid-template-columns: 1fr;
     }
   }
@@ -51,7 +72,7 @@ const t = translations[lang].hero;
   .hero__photo {
     position: relative;
     margin: 0;
-    align-self: end;
+    align-self: center;
 
     // Soft green glow so the cutout sits in the scene instead of floating.
     &::before {
@@ -71,10 +92,17 @@ const t = translations[lang].hero;
       mask-image: linear-gradient(to bottom, #000 70%, transparent);
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1024px) {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+
+    @media (max-width: 640px) {
+      grid-column: 1;
+      grid-row: auto;
       order: -1;
       width: min(24rem, 60%);
-      margin-bottom: 3rem;
+      margin: 0 auto 3rem;
     }
   }
 
